@@ -117,7 +117,8 @@
     - `__init__.py`中如果文件为空，或者没有`__all__`,那么直可以把`__init__`中的内容导入
     - `__init__`如果设置了`__all__`的值，那么按照`__all__`,指定的子包或者模块进行
     如此则不会导入 `__init__`中的内容    
-    -  `__all__=['modulel','module2','package'......]`
+    -  `__all__=['modul
+    el','module2','package'......]`
     
     
 # 命名空间
@@ -127,5 +128,4 @@
     setName()
     Student.setNanme()
     Dog.setName()
-    
-        
+      

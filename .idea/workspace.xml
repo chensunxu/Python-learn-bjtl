@@ -2,23 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a455941-3eee-427a-8ea4-1cd3507f082f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/2-高频-包管理/p04.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2-高频-包管理/p05.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2-高频-包管理/p06.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2-高频-包管理/p07.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2-高频-包管理/p08.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2-高频-包管理/p09.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2-高频-包管理/p10.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2-高频-包管理/pkg01/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2-高频-包管理/pkg01/p01.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2-高频-包管理/pkg02/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2-高频-包管理/pkg02/p01.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2-OOP/.ipynb_checkpoints/05-异常处理-checkpoint.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2-OOP/05-异常处理.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/高频-包管理/01.py" beforeDir="false" afterPath="$PROJECT_DIR$/2-高频-包管理/01.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/高频-包管理/02.py" beforeDir="false" afterPath="$PROJECT_DIR$/2-高频-包管理/02.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/高频-包管理/node.md" beforeDir="false" afterPath="$PROJECT_DIR$/2-高频-包管理/node.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/高频-包管理/p01.py" beforeDir="false" afterPath="$PROJECT_DIR$/2-高频-包管理/p01.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/高频-包管理/p02.py" beforeDir="false" afterPath="$PROJECT_DIR$/2-高频-包管理/p02.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2-高频-包管理/node.md" beforeDir="false" afterPath="$PROJECT_DIR$/2-高频-包管理/node.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -71,13 +58,13 @@
           <entry key="dummy" value="5" />
           <entry key="md" value="6408" />
           <entry key="py" value="1257" />
-          <entry key="txt" value="44" />
+          <entry key="txt" value="59" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Markdown" value="6408" />
-          <entry key="PLAIN_TEXT" value="49" />
+          <entry key="PLAIN_TEXT" value="64" />
           <entry key="Python" value="1257" />
         </counts>
       </usages-collector>
@@ -91,8 +78,8 @@
         <entry file="file://$PROJECT_DIR$/2-高频-包管理/node.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="254">
-                <caret line="127" column="22" lean-forward="true" selection-start-line="127" selection-start-column="22" selection-end-line="127" selection-end-column="22" />
+              <first_editor relative-caret-position="204">
+                <caret line="125" column="6" selection-start-line="125" selection-start-column="6" selection-end-line="125" selection-end-column="6" />
               </first_editor>
               <second_editor />
             </state>
@@ -224,23 +211,6 @@
             <path>
               <item name="Python-learn-bjtl" type="b2602c69:ProjectViewProjectNode" />
               <item name="Python-learn-bjtl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Python-learn-bjtl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Python-learn-bjtl" type="462c0819:PsiDirectoryNode" />
-              <item name="2-高频-包管理" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Python-learn-bjtl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Python-learn-bjtl" type="462c0819:PsiDirectoryNode" />
-              <item name="2-高频-包管理" type="462c0819:PsiDirectoryNode" />
-              <item name="pkg01" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Python-learn-bjtl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Python-learn-bjtl" type="462c0819:PsiDirectoryNode" />
-              <item name="2-高频-包管理" type="462c0819:PsiDirectoryNode" />
-              <item name="pkg02" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -504,12 +474,18 @@
       <option name="project" value="LOCAL" />
       <updated>1539943087642</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Python-16-包">
+      <created>1540195070243</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1540195070243</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="760" y="1" width="1302" height="1040" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26650563" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -550,7 +526,8 @@
     <MESSAGE value="add 04" />
     <MESSAGE value="Python -15" />
     <MESSAGE value="Python -16" />
-    <option name="LAST_COMMIT_MESSAGE" value="Python -16" />
+    <MESSAGE value="Python-16-包" />
+    <option name="LAST_COMMIT_MESSAGE" value="Python-16-包" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -773,8 +750,8 @@
     <entry file="file://$PROJECT_DIR$/2-高频-包管理/node.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="254">
-            <caret line="127" column="22" lean-forward="true" selection-start-line="127" selection-start-column="22" selection-end-line="127" selection-end-column="22" />
+          <first_editor relative-caret-position="204">
+            <caret line="125" column="6" selection-start-line="125" selection-start-column="6" selection-end-line="125" selection-end-column="6" />
           </first_editor>
           <second_editor />
         </state>
