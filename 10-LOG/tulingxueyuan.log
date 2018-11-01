@@ -1,0 +1,20 @@
+DEBUG:root:This is a debug log.
+INFO:root:This is a info log.
+WARNING:root:This is a warning log.
+ERROR:root:This is a error log.
+CRITICAL:root:This is a critical log.
+DEBUG:root:This is a debug log.
+INFO:root:This is a info log.
+WARNING:root:This is a warning log.
+ERROR:root:This is a error log.
+CRITICAL:root:This is a critical log.
+2018-11-01 16:56:11,428=====DEBUG++++++This is a debug log.
+2018-11-01 16:56:11,428=====INFO++++++This is a info log.
+2018-11-01 16:56:11,429=====WARNING++++++This is a warning log.
+2018-11-01 16:56:11,429=====ERROR++++++This is a error log.
+2018-11-01 16:56:11,429=====CRITICAL++++++This is a critical log.
+2018-11-01 16:56:11,429=====DEBUG++++++This is a debug log.
+2018-11-01 16:56:11,429=====INFO++++++This is a info log.
+2018-11-01 16:56:11,430=====WARNING++++++This is a warning log.
+2018-11-01 16:56:11,430=====ERROR++++++This is a error log.
+2018-11-01 16:56:11,430=====CRITICAL++++++This is a critical log.
