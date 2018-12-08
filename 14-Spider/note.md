@@ -177,4 +177,8 @@
             - Http字段  
     - cookie的保存-FileCookieJar，案例v15
     - cookie的读取，案例v16      
-              
+
+- SSL
+    - SSL证书就是指遵守安全套阶层协议的服务器数字证书(SercureSocketLayer)
+    - 美国网景公司开发
+    - CA(CertifacateAuthority)是数字证书 认证中心，是发放，管理，废除数字证书的收信人第三方机构              
