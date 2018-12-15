@@ -84,3 +84,12 @@
 - 选取多个路径
     - //book/tile | //book/author : 选取book元素中的title和author元素
     - //tile | //price: 选取文档中所有的title和price元素    
+
+# lxml库
+- python的HTML/XML的解析器
+- 官方文档：http://lxml.de/index.html
+- 案例v29.py
+- 功能：
+    - 解析HTML
+    - 文件读取，案例v30.html，v31.py
+    - etree和XPath的配合使用，案例v32.py
