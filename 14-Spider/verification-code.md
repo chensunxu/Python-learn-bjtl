@@ -1,0 +1,12 @@
+# Tesseract
+- 机器视觉领域的基础软件
+- OCR:OpticalChracterRecognition，光学文字识别
+- Tessert:一个ocr库，有google赞助
+- 安装：
+    - windows:
+    - Mac：brew install tesseract
+    - Linux：apt-get install tesseract
+    - 安装完成后需要设置环境变量
+        - pip install pytesseract
+    - 读取案例
+        - 案例v38
