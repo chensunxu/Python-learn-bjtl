@@ -12,3 +12,6 @@ def do_normalmap(request):
 
 def withparam(request,year, month):
     return HttpResponse("This is with param {0}, {1}".format(year, month))
+
+def do_app(r):
+    return HttpResponse("这是个路由")

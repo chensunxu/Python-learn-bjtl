@@ -72,7 +72,25 @@
     ```
       /search/page/432 中的 432需要经常性变换，所以设置成参数比较合适
     ```        ```
-        
+# 4.URL在app中的处理
+- 如果所有应用URL都集中tulingxueyuan/urls.py中,可能导致文件的臃肿
+- 可以把urls具体功能逐渐分散到每个app中
+    - 从django.conf.urls 导入 include
+    - 注意此时RE部分的写法
+    - 添加include导入
+- 使用方法
+    - 确保include被导入
+    - 写主路由的开头url
+    - 写子路由
+    - 编写views函数
+- 同样可以使用参数    
+
+# URL中的嵌套参数
+- 捕获某个参数的一部分
+- 例如URL /index/page-3, 需要捕获数字3作为参数
+    - url(r'index_1/(page-(\d+)/)?$', sv.myindex_1), #不太好
+    - url(r'index_2/(?:page-(?P<page_number>\d+)/)?$', sv.myindex_2), #好
+- 上述例子会得到两个参数,但 ?: 表明忽略此参数        
     
     
     

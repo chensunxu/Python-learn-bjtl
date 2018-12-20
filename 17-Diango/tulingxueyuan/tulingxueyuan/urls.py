@@ -2,7 +2,7 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 from teacher import views as tv
-# from teacher import teacher_url
+from teacher import teacher_url
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -17,8 +17,8 @@ urlpatterns = [
     url(r'^withparam/(?P<year>[0-9]{4})/(?P<month>[0,1][0-9])', tv.withparam),  # 正常映射
 
     # 比如约定，凡是由teacher模块处理的视图的url都以teacher开头
-    # url(r'^teacher/', include(teacher_url)),
-    #
+    url(r'^teacher/', include(teacher_url)),
+
     # url(r'^book/(?:page-(?P<pn>\d+)/)$', tv.do_param2),
     #
     # url(r'^yourname/$', tv.revParse, name="askname"),
