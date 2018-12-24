@@ -24,7 +24,7 @@
 
     django-admin startproject tulingxueyuan
     cd tulingxueyuan
-    python manage.oy runserver
+    python manage.py runserver
     
 - pycharm 启动
     - 需要配置    
@@ -87,11 +87,36 @@
 
 # URL中的嵌套参数
 - 捕获某个参数的一部分
-- 例如URL /index/page-3, 需要捕获数字3作为参数
-    - url(r'index_1/(page-(\d+)/)?$', sv.myindex_1), #不太好
-    - url(r'index_2/(?:page-(?P<page_number>\d+)/)?$', sv.myindex_2), #好
-- 上述例子会得到两个参数,但 ?: 表明忽略此参数        
+    - 例如URL /index/page-3, 需要捕获数字3作为参数
     
+    
+    
+        - url(r'index_1/(page-(\d+)/)?$', sv.myindex_1), #不太好
+        - url(r'index_2/(?:page-(?P<page_number>\d+)/)?$', sv.myindex_2), #好
+- 上述例子会得到两个参数,但 ?: 表明忽略此参数  
+
+# 6.传递额外参数
+- 参数不仅仅来自以URL，还可能是我们自己定义的内容
+'''
+url(r'extrem/$',sv.extremParam,{'name':"chensunxu"}),
+'''      
+- 附加参数同样适用于include语句，此时对include内所有都添加
+
+# 7.URL的反向解析
+- 防止硬编码
+- 本质上是对每一个URL进行命名
+- 以后再编码代码中使用URL的值，原则上都应该使用反向解析
+    
+    
+# views 视图
+# 1.视图概念
+- 视图即视图函数，接受web请求并返回web相应的事物处理函数
+- 相应指符合http协议要求的任何内容，包括json,string,html等
+- 本章忽略事务处理，重点在如何返回处理结果上
+# 2.其他简单视图
+- django.http给我们提供类很多和HttpResponse类似的简单视图,
+通过查看django.http代码我们知道，
+- Http404为Exception子类，所以需要raise使用
     
     
         

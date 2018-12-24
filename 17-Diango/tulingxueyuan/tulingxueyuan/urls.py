@@ -19,8 +19,8 @@ urlpatterns = [
     # 比如约定，凡是由teacher模块处理的视图的url都以teacher开头
     url(r'^teacher/', include(teacher_url)),
 
-    # url(r'^book/(?:page-(?P<pn>\d+)/)$', tv.do_param2),
-    #
-    # url(r'^yourname/$', tv.revParse, name="askname"),
+    url(r'^book/(?:page-(?P<pn>\d+)/)$', tv.do_param2),
+
+    url(r'^yourname/$', tv.revParse, name="askname"),
 ]
 
