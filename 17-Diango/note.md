@@ -117,6 +117,70 @@ url(r'extrem/$',sv.extremParam,{'name':"chensunxu"}),
 - django.http给我们提供类很多和HttpResponse类似的简单视图,
 通过查看django.http代码我们知道，
 - Http404为Exception子类，所以需要raise使用
+
+# 3.HttpResponse详解
+- 方法
+    - init ：使用页内容实例化HttpResponse对象
+    - write(content)：以文件的方式写
+    - flush()：以文件的方式输出缓存区
+    - set_cookie(key, value='', max_age=None, expires=None)：设置Cookie
+        - key,value都是字符串类型
+        - max_age是一个整数，表示在指定秒数后过期
+        - expires是一个datetime或timedelta对象，会话将在这个指定的日期/时间过期，注意datetime和timedelta值只有在使用PickleSerializer时才可序列化
+        - max_age与expires二选一
+        - 如果不指定过期时间，则两个星期后过期
+    - delete_cookie(key)：删除指定的key的Cookie，如果key不存在则什么也不发生
+
+# 4. HttpResponseRedirect
+- 重定向，服务器端跳转
+- 构造函数的第一个参数用来指定重定向的地址
+- 案例 ShowViews/views.py
+    ```
+       # 在 east/urls中添加一下内容
+       url(r'^v10_1/', views.v10_1),
+       url(r'^v10_2/', views.v10_2),
+       url(r'^v11/', views.v11, name="v11"), 
+    ```
+    ```
+    # /east/ShowViews/views中添加一下内容
+    def v10_1(request):
+        return HttpResponseRedirect("/v11")
     
+    def v10_2(request):
+        return HttpResponseRedirect(reverse("v11"))
+    
+    def v11(request):
+        return HttpResponse("哈哈，这是v11的访问返回呀")    
+    ```
+# 5.Request对象
+- Request介绍
+    - 服务器接收到http协议的请求后，会根据报文创建HttpRequest对象
+    - 视图函数的第一个参数是HttpRequest对象
+    - 在django.http模块中定义了HttpRequest对象的API   
+- 属性
+    - 下面除非特别说明，属性都是只读的
+    - path：一个字符串，表示请求的页面的完整路径，不包含域名
+    - method：一个字符串，表示请求使用的HTTP方法，常用值包括：'GET'、'POST'
+    - encoding：一个字符串，表示提交的数据的编码方式
+        - 如果为None则表示使用浏览器的默认设置，一般为utf-8
+        - 这个属性是可写的，可以通过修改它来修改访问表单数据使用的编码，接下来对属性的任何访问将使用新的encoding值
+    - GET：一个类似于字典的对象，包含get请求方式的所有参数
+    - POST：一个类似于字典的对象，包含post请求方式的所有参数
+    - FILES：一个类似于字典的对象，包含所有的上传文件
+    - COOKIES：一个标准的Python字典，包含所有的cookie，键和值都为字符串
+    - session：一个既可读又可写的类似于字典的对象，表示当前的会话
+    - 只有当Django 启用会话的支持时才可用，
+    - 详细内容见“状态保持”     
+- 方法
+    - is_ajax()：如果请求是通过XMLHttpRequest发起的，则返回True
+- QueryDict对象
+    - 定义在django.http.QueryDict
+    - request对象的属性GET、POST都是QueryDict类型的对象
+    - 与python字典不同，QueryDict类型的对象用来处理同一个键带有多个值的情况
+    - 方法get()：根据键获取值
+        - 只能获取键的一个值
+        - 如果一个键同时拥有多个值，获取最后一个值
+    - 方法getlist()：根据键获取值
+        - 将键的值以列表返回，可以获取一个键的多个值    
     
         
