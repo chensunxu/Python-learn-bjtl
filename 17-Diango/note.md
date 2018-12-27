@@ -182,5 +182,95 @@ url(r'extrem/$',sv.extremParam,{'name':"chensunxu"}),
         - 如果一个键同时拥有多个值，获取最后一个值
     - 方法getlist()：根据键获取值
         - 将键的值以列表返回，可以获取一个键的多个值    
+- GET属性
+    - QueryDict类型的对象
+    - 包含get请求方式的所有参数
+    - 与url请求地址中的参数对应，位于?后面
+    - 参数的格式是键值对，如key1=value1
+    - 多个参数之间，使用&连接，如key1=value1&key2=value2
+    - 键是开发人员定下来的，值是可变的
+    - 案例/views/v8_get      
+- POST属性
+    - QueryDict类型的对象
+    - 包含post请求方式的所有参数
+    - 与form表单中的控件对应
+    - 表单中空间必须有name属性，name为键，value为值
+        - checkbox存在一键多值的问题
+    - 键是开发人员定下来的，值是可变的
+    - 案例/views/v9_post
+        - settings中设置模板位置(已经设置完毕)
+        - 设置get页面的urls和函数   
+        ``` 
+            # east/urls.py
+            # 需要在路由文件中添加两个路由
+            url(r'^v9_get/', views.v9_get),
+            url(r'^v9_post/', views.v9_post),
+        ```
+        ```
+             # ShowViews/views.py
+             # 在文件中添加下面两个处理函数
+            def v9_get(request):
+                return  render_to_response("for_post.html")
+        
+            def v9_post(request):
+                rst = ""
+                for k,v in request.POST.items():
+                    rst += k + "-->" + v
+                    rst += ","
+        
+                return HttpResponse("Get value of POST is {0} ".format(rst))
+          ```   
+    - 添加文件/east/templates/for_post.html
+    - 由于安全原因，需要在设置中安全选项中删除csrf设置
+    ```
+         # settings.py  
+
+        MIDDLEWARE = [
+            'django.middleware.security.SecurityMiddleware',
+            'django.contrib.sessions.middleware.SessionMiddleware',
+            'django.middleware.common.CommonMiddleware',
+              #  下面这句话被注释掉
+            #'django.middleware.csrf.CsrfViewMiddleware',
+            'django.contrib.auth.middleware.AuthenticationMiddleware',
+            'django.contrib.messages.middleware.MessageMiddleware',
+            'django.middleware.clickjacking.XFrameOptionsMiddleware',
+        ]
+    ```
+- 手动编写视图
+    - 实验目的:
+        - 利用django快捷函数手动编写视图处理函数
+        - 编写过程中理解视图运行原理
+- 分析:
+    - django把所有请求信息封装入request
+    - django通过urls模块把相应请求跟事件处理函数链接起来, 并把request作为参数传入
+    - 在相应的处理函数中,我们需要完成两部分
+        - 处理业务
+        - 把结果封装并返回,我们可以使用简单HttpResponse,同样也可以自己处理此功能,例如我们本例需要做的
+    - 本案例不介绍业务处理,把目光集中在如何渲染结果并返回
+- render(request, template_name[, context][, context_instance][, content_type][, status][, current_app][, dirs][, using])
+    - 使用模板和一个给定的上下文环境,返回一个渲染和的HttpResponse对象
+    - request: django的传入请求
+    - template_name: 模板名称
+    - content_instance: 上下文环境
+    - 案例参看代码 teacher_app/views/render_test
+- render_to_response
+    - 根据给定的上下文字典渲染给定模板,返回渲染后的HttpResponse
+- 系统内建视图
+    - 系统内建视图，可以直接使用
+    - 404
+        - default.page_not_found(request, template_name='404.html')
+        - 系统引发Http404时出发
+        - 默认船体request_path变量给模板,即导致错误的URL
+        - DEBUG=True则不会调用404, 取而代之是调试信息
+        - 404视图会被传递一个RequestContext对象并且可以访问模板上下文处理器提供的变量(MEDIA_URL等)
+    - 500(server error)
+        - defaults.server_error(request, template_name='500.html')
+        - 需要DEBUG=False,否则不调用
+    - 403 (HTTP Forbidden) 视图
+        - defaults.permission_denied(request, template_name='403.html')
+        - 通过PermissionDenied触发
+    - 400 (bad request) 视图
+        - defaults.bad_request(request, template_name='400.html')
+        - DEBUG=False          
     
         
