@@ -593,6 +593,18 @@ s.save()
 # Ajax
 
 # 基于类的视图
+- 可以正对http协议不同的方法创建不同的函数
+- 可以使用Mixin等oop技术
+- Mixin
+    - 把来自父类的行为或者属性组合在一起
+    - 解决多重继承问题
+- ListView
+    - 修改为中文
+        - LANGUAGE_CODE = 'zh-Hans'
+        - TIME_ZONE = 'Asia/Shanghai'    
+# admin 
+
+# RESTful    
 
     
     
