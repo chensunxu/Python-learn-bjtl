@@ -4,7 +4,7 @@
     - django1.8
 - 参考资料
     - [django中文文档](https://yiyibooks.cn/)
-    - django架站的16堂课
+    - 
 # 环境搭建
 - anaconda_pycharm
 - anaconda使用
